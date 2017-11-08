@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="dbNZGoodies_TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RaceDataEntities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MeetingID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="JetBet" Type="int" Nullable="false" />
+          <Property Name="Track" Type="nvarchar(max)" />
+          <Property Name="DayType" Type="nvarchar(max)" />
+          <Property Name="MeetingType" Type="nvarchar(max)" />
+          <Property Name="Club" Type="nvarchar(max)" />
+          <Property Name="MeetingName" Type="nvarchar(max)" />
+          <Property Name="TrackCondition" Type="nvarchar(max)" />
+          <Property Name="TrackConditionScale" Type="int" Nullable="false" />
+          <Property Name="TrackWeather" Type="nvarchar(max)" />
+          <Property Name="Rail" Type="nvarchar(max)" />
+          <Property Name="RaceID" Type="int" Nullable="false" />
+          <Property Name="RaceNumber" Type="int" Nullable="false" />
+          <Property Name="RaceGroup" Type="nvarchar(max)" />
+          <Property Name="RaceType" Type="nvarchar(max)" />
+          <Property Name="Distance" Type="int" Nullable="false" />
+          <Property Name="RaceClass" Type="nvarchar(max)" />
+          <Property Name="RaceName" Type="nvarchar(max)" />
+          <Property Name="Stake1" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="NoAllowances" Type="nvarchar(max)" />
+          <Property Name="MinWeight" Type="nvarchar(max)" />
+          <Property Name="ClassAge" Type="nvarchar(max)" />
+          <Property Name="Class" Type="nvarchar(max)" />
+          <Property Name="ClassGender" Type="nvarchar(max)" />
+          <Property Name="ClassWeight" Type="nvarchar(max)" />
+          <Property Name="RaceTrackCondition" Type="nvarchar(max)" />
+          <Property Name="RaceTrackConditionScale" Type="int" Nullable="false" />
+          <Property Name="RaceWeather" Type="nvarchar(max)" />
+          <Property Name="HorseID" Type="int" Nullable="false" />
+          <Property Name="ToteNumber" Type="int" Nullable="false" />
+          <Property Name="Barrier" Type="int" Nullable="false" />
+          <Property Name="HorseName" Type="nvarchar(max)" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar(max)" />
+          <Property Name="Weight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Finishingposition" Type="nvarchar(max)" />
+          <Property Name="Actualtime" Type="nvarchar(max)" />
+          <Property Name="Last600mTime" Type="nvarchar(max)" />
+          <Property Name="Decimalmargin" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Traditionalmargin" Type="nvarchar(max)" />
+          <Property Name="Trainer" Type="nvarchar(max)" />
+          <Property Name="TrainerLocation" Type="nvarchar(max)" />
+          <Property Name="StartingPriceWin" Type="nvarchar(max)" />
+          <Property Name="StartingPricePlace" Type="nvarchar(max)" />
+          <Property Name="Stake2" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="JockeyName" Type="nvarchar(max)" />
+          <Property Name="CarriedWeight" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="WeightDifference" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DomesticRating" Type="int" Nullable="false" />
+          <Property Name="HurdlesRating" Type="int" Nullable="false" />
+          <Property Name="SteeplesRating" Type="int" Nullable="false" />
+          <Property Name="GearWorn" Type="nvarchar(max)" />
+          <Property Name="SireID" Type="int" Nullable="false" />
+          <Property Name="Sire" Type="nvarchar(max)" />
+          <Property Name="DamID" Type="int" Nullable="false" />
+          <Property Name="Dam" Type="nvarchar(max)" />
+        </EntityType>
+        <Function Name="sp_WinningStats" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="dbNZGoodies_TestModelStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RaceDataEntities" EntityType="Self.RaceDataEntities" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbNZGoodies_TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RaceDataEntities">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MeetingID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="JetBet" Type="Int32" Nullable="false" />
+          <Property Name="Track" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DayType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MeetingType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Club" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MeetingName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TrackCondition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TrackConditionScale" Type="Int32" Nullable="false" />
+          <Property Name="TrackWeather" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RaceID" Type="Int32" Nullable="false" />
+          <Property Name="RaceNumber" Type="Int32" Nullable="false" />
+          <Property Name="RaceGroup" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RaceType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Distance" Type="Int32" Nullable="false" />
+          <Property Name="RaceClass" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RaceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Stake1" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NoAllowances" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MinWeight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClassAge" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Class" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClassGender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClassWeight" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RaceTrackCondition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RaceTrackConditionScale" Type="Int32" Nullable="false" />
+          <Property Name="RaceWeather" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HorseID" Type="Int32" Nullable="false" />
+          <Property Name="ToteNumber" Type="Int32" Nullable="false" />
+          <Property Name="Barrier" Type="Int32" Nullable="false" />
+          <Property Name="HorseName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Weight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Finishingposition" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Actualtime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Last600mTime" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Decimalmargin" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Traditionalmargin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Trainer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TrainerLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartingPriceWin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StartingPricePlace" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Stake2" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="JockeyName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CarriedWeight" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="WeightDifference" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="DomesticRating" Type="Int32" Nullable="false" />
+          <Property Name="HurdlesRating" Type="Int32" Nullable="false" />
+          <Property Name="SteeplesRating" Type="Int32" Nullable="false" />
+          <Property Name="GearWorn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SireID" Type="Int32" Nullable="false" />
+          <Property Name="Sire" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DamID" Type="Int32" Nullable="false" />
+          <Property Name="Dam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="dbNZGoodies_TestEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="RaceDataEntities" EntityType="Self.RaceDataEntities" />
+          <FunctionImport Name="sp_WinningStats" ReturnType="Collection(dbNZGoodies_TestModel.sp_WinningStats_Result)" />
+        </EntityContainer>
+        <ComplexType Name="sp_WinningStats_Result">
+          <Property Type="String" Name="HorseName" Nullable="true" />
+          <Property Type="Int32" Name="horseId" Nullable="false" />
+          <Property Type="Int32" Name="WinCount" Nullable="true" />
+          <Property Type="DateTime" Name="LastDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="EarliestDate" Nullable="true" Precision="23" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbNZGoodies_TestModelStoreContainer" CdmEntityContainer="dbNZGoodies_TestEntities">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="dbNZGoodies_TestModel.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RaceDataEntities">
+            <EntityTypeMapping TypeName="dbNZGoodies_TestModel.RaceDataEntities">
+              <MappingFragment StoreEntitySet="RaceDataEntities">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MeetingID" ColumnName="MeetingID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="JetBet" ColumnName="JetBet" />
+                <ScalarProperty Name="Track" ColumnName="Track" />
+                <ScalarProperty Name="DayType" ColumnName="DayType" />
+                <ScalarProperty Name="MeetingType" ColumnName="MeetingType" />
+                <ScalarProperty Name="Club" ColumnName="Club" />
+                <ScalarProperty Name="MeetingName" ColumnName="MeetingName" />
+                <ScalarProperty Name="TrackCondition" ColumnName="TrackCondition" />
+                <ScalarProperty Name="TrackConditionScale" ColumnName="TrackConditionScale" />
+                <ScalarProperty Name="TrackWeather" ColumnName="TrackWeather" />
+                <ScalarProperty Name="Rail" ColumnName="Rail" />
+                <ScalarProperty Name="RaceID" ColumnName="RaceID" />
+                <ScalarProperty Name="RaceNumber" ColumnName="RaceNumber" />
+                <ScalarProperty Name="RaceGroup" ColumnName="RaceGroup" />
+                <ScalarProperty Name="RaceType" ColumnName="RaceType" />
+                <ScalarProperty Name="Distance" ColumnName="Distance" />
+                <ScalarProperty Name="RaceClass" ColumnName="RaceClass" />
+                <ScalarProperty Name="RaceName" ColumnName="RaceName" />
+                <ScalarProperty Name="Stake1" ColumnName="Stake1" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="NoAllowances" ColumnName="NoAllowances" />
+                <ScalarProperty Name="MinWeight" ColumnName="MinWeight" />
+                <ScalarProperty Name="ClassAge" ColumnName="ClassAge" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="ClassGender" ColumnName="ClassGender" />
+                <ScalarProperty Name="ClassWeight" ColumnName="ClassWeight" />
+                <ScalarProperty Name="RaceTrackCondition" ColumnName="RaceTrackCondition" />
+                <ScalarProperty Name="RaceTrackConditionScale" ColumnName="RaceTrackConditionScale" />
+                <ScalarProperty Name="RaceWeather" ColumnName="RaceWeather" />
+                <ScalarProperty Name="HorseID" ColumnName="HorseID" />
+                <ScalarProperty Name="ToteNumber" ColumnName="ToteNumber" />
+                <ScalarProperty Name="Barrier" ColumnName="Barrier" />
+                <ScalarProperty Name="HorseName" ColumnName="HorseName" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Finishingposition" ColumnName="Finishingposition" />
+                <ScalarProperty Name="Actualtime" ColumnName="Actualtime" />
+                <ScalarProperty Name="Last600mTime" ColumnName="Last600mTime" />
+                <ScalarProperty Name="Decimalmargin" ColumnName="Decimalmargin" />
+                <ScalarProperty Name="Traditionalmargin" ColumnName="Traditionalmargin" />
+                <ScalarProperty Name="Trainer" ColumnName="Trainer" />
+                <ScalarProperty Name="TrainerLocation" ColumnName="TrainerLocation" />
+                <ScalarProperty Name="StartingPriceWin" ColumnName="StartingPriceWin" />
+                <ScalarProperty Name="StartingPricePlace" ColumnName="StartingPricePlace" />
+                <ScalarProperty Name="Stake2" ColumnName="Stake2" />
+                <ScalarProperty Name="JockeyName" ColumnName="JockeyName" />
+                <ScalarProperty Name="CarriedWeight" ColumnName="CarriedWeight" />
+                <ScalarProperty Name="WeightDifference" ColumnName="WeightDifference" />
+                <ScalarProperty Name="DomesticRating" ColumnName="DomesticRating" />
+                <ScalarProperty Name="HurdlesRating" ColumnName="HurdlesRating" />
+                <ScalarProperty Name="SteeplesRating" ColumnName="SteeplesRating" />
+                <ScalarProperty Name="GearWorn" ColumnName="GearWorn" />
+                <ScalarProperty Name="SireID" ColumnName="SireID" />
+                <ScalarProperty Name="Sire" ColumnName="Sire" />
+                <ScalarProperty Name="DamID" ColumnName="DamID" />
+                <ScalarProperty Name="Dam" ColumnName="Dam" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_WinningStats" FunctionName="dbNZGoodies_TestModel.Store.sp_WinningStats">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbNZGoodies_TestModel.sp_WinningStats_Result">
+                <ScalarProperty Name="HorseName" ColumnName="HorseName" />
+                <ScalarProperty Name="horseId" ColumnName="horseId" />
+                <ScalarProperty Name="WinCount" ColumnName="WinCount" />
+                <ScalarProperty Name="LastDate" ColumnName="LastDate" />
+                <ScalarProperty Name="EarliestDate" ColumnName="EarliestDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

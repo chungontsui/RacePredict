@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RacePredict", "RacePredict\RacePredict.csproj", "{EB6567D5-3731-4F91-B1E7-DB2D117D9483}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RacePredict.Test", "RacePredict.Test\RacePredict.Test.csproj", "{062F3426-E5D1-476E-8D7B-2192CBED9478}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB6567D5-3731-4F91-B1E7-DB2D117D9483}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB6567D5-3731-4F91-B1E7-DB2D117D9483}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB6567D5-3731-4F91-B1E7-DB2D117D9483}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB6567D5-3731-4F91-B1E7-DB2D117D9483}.Release|Any CPU.Build.0 = Release|Any CPU
+		{062F3426-E5D1-476E-8D7B-2192CBED9478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{062F3426-E5D1-476E-8D7B-2192CBED9478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{062F3426-E5D1-476E-8D7B-2192CBED9478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{062F3426-E5D1-476E-8D7B-2192CBED9478}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9740915B-218E-4613-A192-8611293E24EF}
+	EndGlobalSection
+EndGlobal
