@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RacePredict", "RacePredict\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RacePredict.Test", "RacePredict.Test\RacePredict.Test.csproj", "{062F3426-E5D1-476E-8D7B-2192CBED9478}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RacePredict.Console", "RacePredict.Console\RacePredict.Console.csproj", "{8C28186E-CD2E-491D-8BD4-6131DF6E6F5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{062F3426-E5D1-476E-8D7B-2192CBED9478}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{062F3426-E5D1-476E-8D7B-2192CBED9478}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{062F3426-E5D1-476E-8D7B-2192CBED9478}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C28186E-CD2E-491D-8BD4-6131DF6E6F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C28186E-CD2E-491D-8BD4-6131DF6E6F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C28186E-CD2E-491D-8BD4-6131DF6E6F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C28186E-CD2E-491D-8BD4-6131DF6E6F5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace RacePredict
 {
+	public enum SearchType
+	{
+		Horse,
+		Jockey,
+		Trainer
+	}
 	public class Repository
 	{
 		private DataAccess _da;
@@ -14,24 +20,43 @@ namespace RacePredict
 		{
 			_da = new DataAccess();
 		}
-		public IEnumerable<RaceDataEntities> GetRaceDataByJockeyName(string Jockey)
+
+		public IEnumerable<RaceDataEntities> GetRaceDataGeneric(SearchType SType, string SearchString)
+		{
+			List<RaceDataEntities> result = new List<RaceDataEntities>();
+			switch(SType)
+			{
+				case SearchType.Horse:
+					result = GetRaceDataByHorseName(SearchString);
+					break;
+				case SearchType.Jockey:
+					result = GetRaceDataByJockeyName(SearchString);
+					break;
+				case SearchType.Trainer:
+					result = GetRaceDataByTrainerName(SearchString);
+					break;
+			}
+			return result;
+		}
+
+		public List<RaceDataEntities> GetRaceDataByJockeyName(string Jockey)
 		{
 			if (string.IsNullOrEmpty(Jockey))
 			{
 				throw new Exception("Jockey Name is empty");
 			}
 
-			return _da.GetRaceData().Where(r => r.JockeyName.Contains(Jockey));
+			return _da.GetRaceData().Where(r => r.JockeyName.Contains(Jockey)).ToList();
 		}
 
-		public IEnumerable<RaceDataEntities> GetRaceDataByHorseName(string Horse)
+		public List<RaceDataEntities> GetRaceDataByHorseName(string Horse)
 		{
 			if (string.IsNullOrEmpty(Horse))
 			{
 				throw new Exception("Horse Name is empty");
 			}
 
-			return _da.GetRaceData().Where(r => r.HorseName.Contains(Horse));
+			return _da.GetRaceData().Where(r => r.HorseName.Contains(Horse)).ToList();
 		}
 
 		public IEnumerable<RaceDataEntities> GetRaceDataByHorseId(int HorseId)
@@ -39,14 +64,14 @@ namespace RacePredict
 			return _da.GetRaceData().Where(r => r.HorseID == HorseId);
 		}
 
-		public IEnumerable<RaceDataEntities> GetRaceDataByTrainerName(string Trainer)
+		public List<RaceDataEntities> GetRaceDataByTrainerName(string Trainer)
 		{
 			if (string.IsNullOrEmpty(Trainer))
 			{
 				throw new Exception("Trainer Name is empty");
 			}
 
-			return _da.GetRaceData().Where(r => r.Trainer.Contains(Trainer));
+			return _da.GetRaceData().Where(r => r.Trainer.Contains(Trainer)).ToList();
 		}
 	}
 }

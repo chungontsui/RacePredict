@@ -12,7 +12,7 @@ namespace RacePredict
 		{
 			using (var context = new dbNZGoodies_TestEntities())
 			{
-				return context.RaceDataEntities;
+				return context.RaceDataEntities.ToList();
 			}
 		}
 	}

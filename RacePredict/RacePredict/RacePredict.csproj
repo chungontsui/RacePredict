@@ -73,6 +73,7 @@
       <DependentUpon>RaceData.tt</DependentUpon>
     </Compile>
     <Compile Include="Repository.cs" />
+    <Compile Include="ScoreModel.cs" />
     <Compile Include="sp_WinningStats_Result.cs">
       <DependentUpon>RaceData.tt</DependentUpon>
     </Compile>
