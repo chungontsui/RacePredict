@@ -10,9 +10,11 @@ namespace RacePredict.Test
 	public class Test
 	{
 		private Repository repo;
+		private DataAccess da;
 		public Test()
 		{
 			repo = new Repository();
+			da = new DataAccess();
 		}
 
 		[Test]
@@ -20,7 +22,7 @@ namespace RacePredict.Test
 		{
 			string jockeyName = "Leah Hemi";
 
-			Assert.That(repo.GetRaceDataByJockeyName(jockeyName) != null, "Can not return jockey with the name " + jockeyName);
+			Assert.That(da.GetRaceDataByJockeyName(jockeyName) != null, "Can not return jockey with the name " + jockeyName);
 		}
 
 		[Test]
@@ -28,7 +30,7 @@ namespace RacePredict.Test
 		{
 			string horseName = "Little Tee";
 
-			Assert.That(repo.GetRaceDataByHorseName(horseName) != null, "Can not return horse with the name " + horseName);
+			Assert.That(da.GetRaceDataByHorseName(horseName) != null, "Can not return horse with the name " + horseName);
 		}
 
 		[Test]
@@ -36,7 +38,7 @@ namespace RacePredict.Test
 		{
 			string trainerName = "Gary Vile";
 
-			Assert.That(repo.GetRaceDataByTrainerName(trainerName) != null, "Can not return trainer with the name " + trainerName);
+			Assert.That(da.GetRaceDataByTrainerName(trainerName) != null, "Can not return trainer with the name " + trainerName);
 		}
 		[Test]
 		public void CanGetRaceDataGeneric()
@@ -56,6 +58,20 @@ namespace RacePredict.Test
 			var result = _Score.GetScore(SearchType.Jockey, "Leah Hemi");
 
 			Assert.That(result.Item2 > 0, "There seems to some issues getting the Score");
+		}
+		[Test]
+		public void CanGetCombineScore()
+		{
+			ScoreModel _Score = new ScoreModel();
+			Tuple<SearchType, string>[] inputs = {
+				new Tuple<SearchType, string>(SearchType.Jockey, "Samantha Collett"),
+				new Tuple<SearchType, string>(SearchType.Trainer, "Shaune Ritchie")
+			};
+
+			var result = _Score.GetCombineScore(inputs);
+
+			Assert.That(result.Item1.Equals("Samantha Collett-Shaune Ritchie"), "Result Combined Name is wrong");
+			Assert.That(result.Item2 > 0, "Sum of the score returns zero");
 		}
 	}
 }

@@ -27,51 +27,18 @@ namespace RacePredict
 			switch(SType)
 			{
 				case SearchType.Horse:
-					result = GetRaceDataByHorseName(SearchString);
+					result = _da.GetRaceDataByHorseName(SearchString);
 					break;
 				case SearchType.Jockey:
-					result = GetRaceDataByJockeyName(SearchString);
+					result = _da.GetRaceDataByJockeyName(SearchString);
 					break;
 				case SearchType.Trainer:
-					result = GetRaceDataByTrainerName(SearchString);
+					result = _da.GetRaceDataByTrainerName(SearchString);
 					break;
 			}
 			return result;
 		}
 
-		public List<RaceDataEntities> GetRaceDataByJockeyName(string Jockey)
-		{
-			if (string.IsNullOrEmpty(Jockey))
-			{
-				throw new Exception("Jockey Name is empty");
-			}
 
-			return _da.GetRaceData().Where(r => r.JockeyName.Contains(Jockey)).ToList();
-		}
-
-		public List<RaceDataEntities> GetRaceDataByHorseName(string Horse)
-		{
-			if (string.IsNullOrEmpty(Horse))
-			{
-				throw new Exception("Horse Name is empty");
-			}
-
-			return _da.GetRaceData().Where(r => r.HorseName.Contains(Horse)).ToList();
-		}
-
-		public IEnumerable<RaceDataEntities> GetRaceDataByHorseId(int HorseId)
-		{
-			return _da.GetRaceData().Where(r => r.HorseID == HorseId);
-		}
-
-		public List<RaceDataEntities> GetRaceDataByTrainerName(string Trainer)
-		{
-			if (string.IsNullOrEmpty(Trainer))
-			{
-				throw new Exception("Trainer Name is empty");
-			}
-
-			return _da.GetRaceData().Where(r => r.Trainer.Contains(Trainer)).ToList();
-		}
 	}
 }
